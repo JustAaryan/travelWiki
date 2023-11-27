@@ -70,12 +70,15 @@
             0% {
                 opacity: 0;
             }
+
             25% {
                 opacity: 1;
             }
+
             75% {
                 opacity: 1;
             }
+
             100% {
                 opacity: 0;
             }
@@ -112,7 +115,6 @@
         .tab-content.active {
             display: block;
         }
-
     </style>
 </head>
 
@@ -131,7 +133,7 @@
 
     <section>
         <h2>Popular Destinations</h2>
-        
+
         <h3>Your Preference</h3>
         <div class="tabs">
             <div class="tab" onclick="openTab('tab1')">Tab 1</div>
@@ -142,7 +144,10 @@
         <div id="tab1" class="tab-content">
             <!-- Content for Tab 1 -->
             <label for="option1">Option 1:</label>
-            <input type="text" id="option1" name="option1">
+            <select id="dests" name="dests">
+                <option value="v">Nepal</option>
+                <option value="s">India</option>
+            </select>
         </div>
 
         <div id="tab2" class="tab-content">
@@ -159,7 +164,7 @@
     </section>
 
     <footer>
-        
+
     </footer>
 
     <script>
