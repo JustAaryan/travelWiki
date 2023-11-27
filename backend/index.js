@@ -1,5 +1,5 @@
 const express = require('express');
-const port = 7070;
+const port = process.env.PORT||7070;
 
 const app = express();
 
