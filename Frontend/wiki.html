@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelWiki</title>
     <style>
-        body {
+        .signin
+        {
+            background-color:white;
+            color:violet;
+            border:none;
+            border-radius: 8px;
+            height:30px;
+            width:74px;
+            font-weight: bold;
+            cursor:pointer;
+            margin-left:400px;
+            transition: box-shadow 0.15s;
+            vertical-align: top;
+        }
+        .signin:hover
+        {
+           box-shadow:5px 5px 10px
+           rgba(0,0,0,violet);
+        }
+        .signin:hover
+        {
+           opacity: 0.7;
+        }
+        body { 
             font-family: 'Times New Roman';
             margin: 0;
             padding: 0;
@@ -120,6 +143,8 @@
 
     <header>
         <h1>TravelWiki</h1>
+        <button class="signin">Sign in</button>
+
     </header>
 
     <nav>
