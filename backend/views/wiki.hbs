@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelWiki</title>
+    <link rel="stylesheet" href="/head.css">
+    <link rel="stylesheet" href="/body.css">
+    <link rel="stylesheet" href="/signin.css">
+    <link rel="stylesheet" href="/footer.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>TravelWiki</h1>
+        <a href="/login">
+        <button class="signin">Sign in</button></a>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="blogs.html">Places</a>
+        <a href="socials.html">Festivals</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <section>
+        <h2>Popular Destinations</h2>
+
+        <h3>Your Preference</h3>
+        <div class="tabs">
+            <div class="tab" onclick="openTab('tab1')">Tab 1</div>
+            <div class="tab" onclick="openTab('tab2')">Tab 2</div>
+            <div class="tab" onclick="openTab('tab3')">Tab 3</div>
+        </div>
+
+        <div id="tab1" class="tab-content">
+            <!-- Content for Tab 1 -->
+            <label for="option1">Option 1:</label>
+            <select id="dests" name="dests">
+                <option value="v">Nepal</option>
+                <option value="s">India</option>
+            </select>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <!-- Content for Tab 2 -->
+            <label for="option2">Option 2:</label>
+            <input type="text" id="option2" name="option2">
+        </div>
+
+        <div id="tab3" class="tab-content">
+            <!-- Content for Tab 3 -->
+            <label for="option3">Option 3:</label>
+            <input type="text" id="option3" name="option3">
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script>
+        // JavaScript to handle tabs
+        function openTab(tabName) {
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabLinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].style.backgroundColor = "#444";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

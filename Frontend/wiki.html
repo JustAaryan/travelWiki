@@ -5,146 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelWiki</title>
-    <style>
-        .signin
-        {
-            background-color:white;
-            color:violet;
-            border:none;
-            border-radius: 8px;
-            height:30px;
-            width:74px;
-            font-weight: bold;
-            cursor:pointer;
-            margin-left:1180px;
-            transition: box-shadow 0.15s;
-            vertical-align: top;
-        }
-        .signin:hover
-        {
-           box-shadow:5px 5px 10px
-           rgba(0,0,0,violet);
-        }
-        .signin:hover
-        {
-           opacity: 0.7;
-        }
-        body { 
-            font-family: 'Times New Roman';
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
+    <link rel="stylesheet" href="../Css/head.css">
+    <link rel="stylesheet" href="../Css/body.css">
+    <link rel="stylesheet" href="../Css/signin.css">
+    <link rel="stylesheet" href="../Css/footer.css">
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #444;
-            overflow: hidden;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        section {
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        section img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        section h3 {
-            color: #333;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Animation */
-        @keyframes slideshow {
-            0% {
-                opacity: 0;
-            }
-            25% {
-                opacity: 1;
-            }
-            75% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .tab {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            background-color: skyblue;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .tab:hover {
-            background-color: #555;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: white;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-    </style>
 </head>
 
 <body>
 
     <header>
         <h1>TravelWiki</h1>
-        <button class="signin">Sign in</button>
-
+        <a href="login.hbs">
+        <button class="signin">Sign in</button></a>
     </header>
 
     <nav>
@@ -156,7 +29,7 @@
 
     <section>
         <h2>Popular Destinations</h2>
-        
+
         <h3>Your Preference</h3>
         <div class="tabs">
             <div class="tab" onclick="openTab('tab1')">Tab 1</div>
@@ -167,7 +40,10 @@
         <div id="tab1" class="tab-content">
             <!-- Content for Tab 1 -->
             <label for="option1">Option 1:</label>
-            <input type="text" id="option1" name="option1">
+            <select id="dests" name="dests">
+                <option value="v">Nepal</option>
+                <option value="s">India</option>
+            </select>
         </div>
 
         <div id="tab2" class="tab-content">
@@ -184,7 +60,7 @@
     </section>
 
     <footer>
-        
+
     </footer>
 
     <script>
