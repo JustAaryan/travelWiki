@@ -67,3 +67,24 @@ section h3 {
 .tab-content.active {
     display: block;
 }
+#button-container {
+    position: fixed;
+    top: calc(50% + 60px); /* Adjust the top position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the button is in front of the slideshow */
+    font-size: 18px;
+    padding: 10px 20px;
+    color: white;
+    height:30px;
+    font-weight: bold;
+    width:74px;
+    border: none;
+    text-size-adjust: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+}
+
+/* expbutton {
+    
+} */

@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="/head.css">
     <link rel="stylesheet" href="/body.css">
     <link rel="stylesheet" href="/signin.css">
+    <link rel="stylesheet" href="/animation.css">
+    <link rel="stylesheet" href="/textanimation.css">
     <link rel="stylesheet" href="/footer.css">
 
 </head>
 
 <body>
-
-    <header>
+    <div class="slideshow-container">
+        <img class="mySlides active" src="ktm.jpg" alt="Error Kathmandu">
+        <img class="mySlides" src="pok.jpg" alt="Error Pokhara">
+        <img class="mySlides" src="must.jpg" alt="Error Mustang">
+        <img class="mySlides" src="bhak.jpg" alt="Error Bhaktapur">
+    </div>
+    <div id="button-container">
+        <button onclick="button()">Explore</button>
+    </div>
+   <header>
         <h1>TravelWiki</h1>
         <a href="./login.ejs">
         <button class="signin">Sign in</button>
@@ -23,61 +33,79 @@
 
     <nav>
         <a href="#home">Home</a>
-        <a href="blogs.html">Places</a>
-        <a href="socials.html">Festivals</a>
-        <a href="about.html">About Us</a>
+        <a href="blog.ejs">Places</a>
+        <a href="fesabout.ejs">Festivals</a>
+        <a href="socials.ejs">About Us</a>
     </nav>
-
-    <section>
-        <h2>Popular Destinations</h2>
-
-        <h3>Your Preference</h3>
-        <div class="tabs">
-            <div class="tab" onclick="openTab('tab1')">Tab 1</div>
-            <div class="tab" onclick="openTab('tab2')">Tab 2</div>
-            <div class="tab" onclick="openTab('tab3')">Tab 3</div>
-        </div>
-
-        <div id="tab1" class="tab-content">
-            <!-- Content for Tab 1 -->
-            <label for="option1">Option 1:</label>
-            <select id="dests" name="dests">
-                <option value="v">Nepal</option>
-                <option value="s">India</option>
-            </select>
-        </div>
-
-        <div id="tab2" class="tab-content">
-            <!-- Content for Tab 2 -->
-            <label for="option2">Option 2:</label>
-            <input type="text" id="option2" name="option2">
-        </div>
-
-        <div id="tab3" class="tab-content">
-            <!-- Content for Tab 3 -->
-            <label for="option3">Option 3:</label>
-            <input type="text" id="option3" name="option3">
-        </div>
-    </section>
 
     <footer>
 
     </footer>
-
+    <div id="text-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // JavaScript to handle tabs
-        function openTab(tabName) {
-            var i, tabContent, tabLinks;
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
+       // JavaScript for slideshow functionality
+       var texts = [
+            "Welcome to our website.",
+            "Popular Destinations",
+            "Your Choices/Preferences.",
+            "Different Festivals and Occasions"
+            // Add more texts as needed
+        ];
+
+        var currentTextIndex = 0;
+        var currentText = '';
+        var letterIndex = 0;
+
+        function typeText() {
+            if (letterIndex < texts[currentTextIndex].length) {
+                currentText += texts[currentTextIndex][letterIndex];
+                document.getElementById('text-container').innerHTML = currentText + '|';
+                letterIndex++;
+                setTimeout(typeText, 50); // Adjust the typing speed here
+            } else {
+                setTimeout(eraseText, 1000); // Wait before erasing
             }
-            tabLinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tabLinks.length; i++) {
-                tabLinks[i].style.backgroundColor = "#444";
-            }
-            document.getElementById(tabName).style.display = "block";
         }
+
+        function eraseText() {
+            if (letterIndex > 0) {
+                currentText = currentText.slice(0, -1);
+                document.getElementById('text-container').innerHTML = currentText + '|';
+                letterIndex--;
+                setTimeout(eraseText, 30); // Adjust the erasing speed here
+            } else {
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                setTimeout(typeText, 500); // Wait before typing the next text
+            }
+        }
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = 0;
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.opacity = 1;
+
+            setTimeout(showSlides, 3000); // Change 3000 to your desired interval
+        }
+        function button()
+        {
+            window.location.href ='login.ejs';
+            alert('Sign in');
+        }
+
+        var slideIndex = 0;
+        showSlides();
+        typeText(); // Start the text typing animation
+
     </script>
 
 </body>

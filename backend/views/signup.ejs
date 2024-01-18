@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
 </head>
 <body>
-    <h2>Sign UP</h2>
-    <form id="signupForm">
-        <input type="text" name="name" placeholder="Name">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" value="Submit">
+    <h2>Sign In</h2>
+    <form action="signup.ejs" method="post">
+    <input type="text" name="name" placeholder="UserName">
+    <input type="password" name="password" placeholder="Password">
+    <input type="Submit">
     </form>
 
-    <script>
+    <!-- <script>
         document.getElementById('signupForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
 
@@ -32,6 +32,6 @@
                     // Handle error here
                 });
         });
-    </script>
+    </script> -->
 </body>
 </html>
