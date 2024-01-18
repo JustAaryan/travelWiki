@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h2>Sign UP</h2>
+    <form id="signupForm">
+        <input type="text" name="name" placeholder="Name">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            var formData = new FormData(event.target);
+            formData && console.log("before submit",formData)
+            // Perform the Axios request
+            axios.post('http://localhost:7070/register', formData)
+                .then(function (response) {
+                    console.log('Form submitted successfully:', response.data);
+                    // Handle success response here
+                })
+                .catch(function (error) {
+                    console.error('Error submitting form:', error);
+                    // Handle error here
+                });
+        });
+    </script>
+</body>
+</html>
