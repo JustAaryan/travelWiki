@@ -1,25 +1,34 @@
-const mongoose=require("mongoose")
-mongoose.connect("mongodb://localhost:27017/Login")
+const mongoose = require("mongoose");
 
-.then(()=>{
+mongoose.connect("mongodb://127.0.0.1:27017/Login")
+    .then(() => {
+        console.log("MongoDB connected");
+    })
+    .catch((error) => {
+        console.error("MongoDB connection failed:", error);
+    });
 
-    console.log("mongodb connected");
-})
-.catch(()=>{
-    console.log("Failed To Connect");
-})
+const Loginschema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true // Assuming email should be unique
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    gender: {
+        type: String,
+        enum: ['male', 'female', 'other'], // Assuming three options for gender
+        required: true
+    }
+});
 
-const Loginschema=new mongoose.Schema({
-        name:{
-            type:String,
-            required:true
-        },
-        password:{
-            type:String,
-            required:true
-        }
+const collection = mongoose.model("Logininfo", Loginschema);
 
-})
-const collection=new mongoose.model("Logininfo",Loginschema)
-
-module.exports=collection
+module.exports = collection;

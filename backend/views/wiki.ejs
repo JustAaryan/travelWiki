@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,14 +21,14 @@
         <img class="mySlides" src="must.jpg" alt="Error Mustang">
         <img class="mySlides" src="bhak.jpg" alt="Error Bhaktapur">
     </div>
-    <div id="button-container">
+    <!-- <div id="button-container">
         <button onclick="button()">Explore</button>
-    </div>
+    </div> -->
    <header>
         <h1>TravelWiki</h1>
-        <a href="./login.ejs">
+        <!-- <a href="./login.ejs">
         <button class="signin">Sign in</button>
-        </a>
+        </a> -->
     </header>
 
     <nav>
@@ -96,11 +96,11 @@
 
             setTimeout(showSlides, 3000); // Change 3000 to your desired interval
         }
-        function button()
-        {
-            window.location.href ='login.ejs';
-            alert('Sign in');
-        }
+        // function button()
+        // {
+        //     window.location.href ='login.ejs';
+        //     alert('Sign in');
+        // }
 
         var slideIndex = 0;
         showSlides();
@@ -108,146 +108,7 @@
 
     </script>
 
-</body>
-
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelWiki</title>
-    <link rel="stylesheet" href="/head.css">
-    <link rel="stylesheet" href="/body.css">
-    <link rel="stylesheet" href="/signin.css">
-    <link rel="stylesheet" href="/animation.css">
-    <link rel="stylesheet" href="/textanimation.css">
-    <link rel="stylesheet" href="/footer.css">
-
-</head>
-
-<body>
-    <div class="slideshow-container">
-        <img class="mySlides active" src="ktm.jpg" alt="Error Kathmandu">
-        <img class="mySlides" src="pok.jpg" alt="Error Pokhara">
-        <img class="mySlides" src="must.jpg" alt="Error Mustang">
-        <img class="mySlides" src="bhak.jpg" alt="Error Bhaktapur">
-    </div>
-    <div id="button-container">
-        <button onclick="button()">Explore</button>
-    </div>
-    <header>
-        <a href="./login.ejs">
-            <button class="signin">Sign in</button>
-            </a>
-    </header>
-
-    <nav class="tab">
-        <a href ="#home" class="tablinks">Home</a>
-        <a href="blog.ejs"class="tablinks">Places</a>
-        <a href="fesabout.ejs"class="tablinks">Festivals</a>
-        <a href="socials.ejs"class="tablinks">About Us</a>
-    </nav>
-
-    
-    
-    
- 
-
-    <!-- Footer content -->
-    <footer>
-        <!-- Footer content -->
-    </footer>
-    <div id="text-container"></div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-       // JavaScript for slideshow functionality
-       var texts = [
-            "Welcome to our website.",
-            "Popular Destinations",
-            "Your Choices/Preferences.",
-            "Different Festivals and Occasions"
-            // Add more texts as needed
-        ];
-
-        var currentTextIndex = 0;
-        var currentText = '';
-        var letterIndex = 0;
-
-        function typeText() {
-            if (letterIndex < texts[currentTextIndex].length) {
-                currentText += texts[currentTextIndex][letterIndex];
-                document.getElementById('text-container').innerHTML = currentText + '|';
-                letterIndex++;
-                setTimeout(typeText, 50); // Adjust the typing speed here
-            } else {
-                setTimeout(eraseText, 1000); // Wait before erasing
-            }
-        }
-
-        function eraseText() {
-            if (letterIndex > 0) {
-                currentText = currentText.slice(0, -1);
-                document.getElementById('text-container').innerHTML = currentText + '|';
-                letterIndex--;
-                setTimeout(eraseText, 30); // Adjust the erasing speed here
-            } else {
-                currentTextIndex = (currentTextIndex + 1) % texts.length;
-                setTimeout(typeText, 500); // Wait before typing the next text
-            }
-        }
-
-        function showSlides() {
-            var slides = document.getElementsByClassName("mySlides");
-
-            for (var i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = 0;
-            }
-
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            slides[slideIndex - 1].style.opacity = 1;
-
-            setTimeout(showSlides, 3000); // Change 3000 to your desired interval
-        }
-        function button()
-        {
-            window.location.href ='login.ejs';
-            alert('Sign in');
-        }
-
-        var slideIndex = 0;
-        showSlides();
-        typeText(); // Start the text typing animation
-
-    </script>
-
-    <!-- Your JavaScript and script links -->
-    <script>
-        // JavaScript for tab functionality
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        document.getElementById("defaultOpen").click();
-    </script>
 </body>
 
 </html>
+

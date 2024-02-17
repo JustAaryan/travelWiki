@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="/login.css">
+
 </head> 
  <body>
     <h2>Log In</h2>
-    <form action="login.ejs" method="post">
-    <input type="text" name="name" placeholder="UserName">
-    <input type="password" name="password" placeholder="Password">
-    <input type="Submit" name="Submit">
+    <form action="/login.ejs" method="post">
+        <input type="text" name="name" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Sign in</button>
     </form>
-    <a href="./signup.ejs">Register</a>
+    <a href="/signup">Register</a>
+    
 </body>
 </html>

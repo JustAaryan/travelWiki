@@ -3,45 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/signup.css">
+
+
     <title>Register</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="/public/signup.css">
-    </head>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+</head>
 <body>
-    <div class="container">
-        <div class="form-container">
+    <h2>Sign Up</h2>
     <form action="signup.ejs" method="post">
-        <h2>Sign In</h2>  
-        <label for="newUsername">Username</label>
-        <input type="text" id="newUsername" name="newUsername" required>
-        
-        <label for="newPassword">Password</label>
-        <input type="password" id="newPassword" name="newPassword" required>
+        <input type="text" name="name" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <h3>Choose Your Ling</h3>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other" required>
         
         <button type="submit">Sign Up</button>
     </form>
-        </div>
-    </div> 
-
-     <!-- <script>
-        document.getElementById('signupForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Get form data
-            var formData = new FormData(event.target);
-            formData && console.log("before submit",formData)
-            // Perform the Axios request
-            axios.post('http://localhost:7070/register', formData)
-                .then(function (response) {
-                    console.log('Form submitted successfully:', response.data);
-                    // Handle success response here
-                })
-                .catch(function (error) {
-                    console.error('Error submitting form:', error);
-                    // Handle error here
-                });
-        }); 
-    </script> -->
 </body>
 </html>
 

@@ -4,20 +4,15 @@ const port = process.env.PORT || 7070;
 const app = express();
 var path = require('path');
 const collection = require("./src/mongodb")
-
 // Use express-session middleware
+app.set('view engine', 'ejs');
 app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: true
 }));
-
-app.set('view engine', 'ejs');
-app.set('views', './views');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes'));
-app.use(express.json())
-app.set('views', './views');
 app.use(express.urlencoded({ extend: false }))
 
 // Middleware to check login status
@@ -35,10 +30,20 @@ app.get("/login.ejs", (req, res) => {
     res.render("login");
 });
 app.get("/socials.ejs", (req, res) => {
-    res.render("socials");
+      // Check if the user is logged in
+      if (req.session.loggedIn) {
+        res.render("socials");
+    } else {
+        res.redirect("/login.ejs");
+    }
 });
 app.get("/fesabout.ejs", (req, res) => {
-    res.render("fesabout");
+      // Check if the user is logged in
+      if (req.session.loggedIn) {
+        res.render("fesabout");
+    } else {
+        res.redirect("/login.ejs");
+    }
 });
 app.get("/blog.ejs", (req, res) => {
     // Check if the user is logged in
@@ -49,7 +54,7 @@ app.get("/blog.ejs", (req, res) => {
     }
 });
 
-app.get("/signup.ejs", (req, res) => {
+app.get("/signup", (req, res) => {
     res.render("signup");
 });
 
@@ -75,16 +80,22 @@ app.post("/blog.ejs", async (req, res) => {
 app.post("/signup.ejs", async (req, res) => {
     const data = {
         name: req.body.name,
-        password: req.body.password
+        email: req.body.email,
+        password: req.body.password,
+        gender: req.body.gender
     };
 
-    await collection.insertMany([data]);
-
-    // Assuming successful signup, set login status in the session
-    req.session.loggedIn = true;
-
-    res.redirect("/blog.ejs");
+    try {
+        await collection.create(data);
+        // Assuming successful signup, set login status in the session
+        req.session.loggedIn = true;
+        res.redirect("/blog.ejs");
+    } catch (error) {
+        console.error("Error creating user:", error);
+        res.status(500).send("Error creating user");
+    }
 });
+
 
 app.post("/login.ejs", async (req, res) => {
     try {
