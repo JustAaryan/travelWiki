@@ -37,14 +37,21 @@ app.get("/socials.ejs", (req, res) => {
         res.redirect("/login.ejs");
     }
 });
+app.get("/wiki", (req, res) => {
+    res.render("wiki");
+});
+
 app.get("/fesabout.ejs", (req, res) => {
-      // Check if the user is logged in
-      if (req.session.loggedIn) {
+    // Check if the user is logged in
+    if (req.session.loggedIn) {
         res.render("fesabout");
     } else {
+        // If not logged in, save the original URL to redirect back after login
+        req.session.returnTo = "/fesabout.ejs";
         res.redirect("/login.ejs");
     }
 });
+
 app.get("/blog.ejs", (req, res) => {
     // Check if the user is logged in
     if (req.session.loggedIn) {
@@ -58,7 +65,7 @@ app.get("/signup", (req, res) => {
     res.render("signup");
 });
 
-app.post("/blog.ejs", async (req, res) => {
+app.post("/wiki", async (req, res) => {
     // Check if the user is logged in
     if (req.session.loggedIn) {
         // Handle blog post logic here
@@ -71,9 +78,9 @@ app.post("/blog.ejs", async (req, res) => {
         // Add your logic to save the blog post data to the database
         // Example: await blogPostCollection.insertOne(postData);
 
-        res.send("Blog post submitted successfully!");
+        res.send("Data post submitted successfully!");
     } else {
-        res.redirect("/login.ejs");
+        res.redirect("/wiki");
     }
 });
 
@@ -89,7 +96,8 @@ app.post("/signup.ejs", async (req, res) => {
         await collection.create(data);
         // Assuming successful signup, set login status in the session
         req.session.loggedIn = true;
-        res.redirect("/blog.ejs");
+        res.redirect("/wiki");
+        console.log('Sign in successful');
     } catch (error) {
         console.error("Error creating user:", error);
         res.status(500).send("Error creating user");
@@ -103,7 +111,8 @@ app.post("/login.ejs", async (req, res) => {
         if (check && check.password === req.body.password) {
             // Set login status in the session
             req.session.loggedIn = true;
-            res.redirect("/blog.ejs");
+            res.redirect("/wiki");
+            console.log('Sign in successful');
         } else {
             res.send("Invalid Password");
         }
@@ -111,6 +120,7 @@ app.post("/login.ejs", async (req, res) => {
         res.send("Wrong Details");
     }
 });
+
 
 app.listen(port, (err) => {
     if (err) {
