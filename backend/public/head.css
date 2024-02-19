@@ -1,11 +1,8 @@
 header {
-    background-color: rgba(255, 255, 255, 0); 
+     background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
     color: white;
     padding: 10px;
     text-align: left;
     overflow: hidden;
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-    grid-gap: 20px; 
 }
 
