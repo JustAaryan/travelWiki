@@ -8,13 +8,16 @@ var path = require('path');
 const mongoURI=process.env.MONGODB_URI;
 const client= new MongoClient(mongoURI)
 const collection = require("./src/mongodb")
-export function connectToMongo(callback){
-    client.connect().then((client)=>{
+function connectToMongo(callback) {
+        client.connect().then((client)=>{
         return callback();
     }).catch(err=>{
         callback(err)
     })
 }
+module.exports = { connectToMongo };
+
+
 export function getDb(db=process.env.DB_NAME){
     return client.db(dbName)
 }
