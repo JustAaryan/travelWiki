@@ -3,9 +3,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 76px; /* Increased text size */
-    font-weight: bold; /* Bold text */
+    font-size: 76px; 
+    font-weight: bold; 
     white-space: nowrap;
-    color:white; /* Custom text color */
-    z-index: 1; /* Place the text animation in front of the slideshow */
-    }
+    color: white; 
+    z-index: 1; 
+}
