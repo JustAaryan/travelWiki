@@ -30,7 +30,7 @@ body {
 @media (max-width: 768px) {
     .slideshow-container {
         position: relative;
-        height: 100vh;
+        height: 25vh;
         overflow: hidden;
     }
 
