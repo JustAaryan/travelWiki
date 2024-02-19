@@ -11,7 +11,7 @@
 } */
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   grid-gap: 20px; /* Add gap between grid items */
   justify-content: space-around;
   margin-top: 20px;
