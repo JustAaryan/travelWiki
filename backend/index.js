@@ -1,9 +1,22 @@
+import {MongoClient} from "mongodb";
 const express = require('express');
 const session = require('express-session'); // Added express-session
 const port = process.env.PORT || 7020;
 const app = express();
 var path = require('path');
+const mongoURI=process.env.MONGODB_URI;
+const client= new MongoClient(mongoURI)
 const collection = require("./src/mongodb")
+export function connectToMongo(callback){
+    client.connect().then((client)=>{
+        return callback();
+    }).catch(err=>{
+        callback(err)
+    })
+}
+export function getDb(db=process.env.DB_NAME){
+    return client.db(dbName)
+}
 // Use express-session middleware
 app.set('view engine', 'ejs');
 app.use(session({
