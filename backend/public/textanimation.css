@@ -3,17 +3,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4vw; /* Use viewport width units for font size */
+    font-size: 76px; 
     font-weight: bold; 
     white-space: nowrap;
     color: white; 
     z-index: 1; 
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    #text-container {
-        font-size: 6vw; /* Adjust font size for smaller screens */
-    }
-}
-
