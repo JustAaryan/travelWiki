@@ -17,10 +17,12 @@ function connectToMongo(callback) {
 }
 module.exports = { connectToMongo };
 
-
-export function getDb(db=process.env.DB_NAME){
+function getDb(db = process.env.DB_NAME) {
     return client.db(dbName)
 }
+module.exports = { getDb };
+
+
 // Use express-session middleware
 app.set('view engine', 'ejs');
 app.use(session({
