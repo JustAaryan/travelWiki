@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session'); // Added express-session
-const port = process.env.PORT || 7070;
+const port = process.env.PORT || 7020;
 const app = express();
 var path = require('path');
 const collection = require("./src/mongodb")
