@@ -15,8 +15,9 @@
   justify-content: space-around;
   margin-top: 20px;
 }
+
 .item {
-  width: 45%;
+  flex: 0 0 calc(45% - 20px); /* Adjusted width to fit two items per row */
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ccc;
@@ -24,15 +25,18 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+
 .item img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
+
 .description {
   margin-top: 10px;
   display: none; /* Initially hide the full description */
 }
+
 button {
   margin-top: 10px;
   background-color: #007bff;
@@ -43,6 +47,7 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #0056b3;
 }
