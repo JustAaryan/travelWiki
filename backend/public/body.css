@@ -4,9 +4,8 @@ body {
     padding: 0;
     background-color: #f2f2f2;
 }
-
 nav {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0); 
     overflow: hidden;
 }
 
@@ -23,7 +22,6 @@ nav a:hover {
     background-color: #ddd;
     color: black;
 }
-
 section {
     padding: 20px;
     position: relative;
@@ -39,15 +37,14 @@ section img {
 section h3 {
     color: #333;
 }
-
 .tabs {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Create a grid layout with auto-fill columns */
-    grid-gap: 10px; /* Add gap between grid items */
+    display: flex;
+    justify-content: space-around;
     margin-top: 20px;
 }
 
 .tab {
+    flex: 1;
     text-align: center;
     padding: 10px;
     background-color: skyblue;
