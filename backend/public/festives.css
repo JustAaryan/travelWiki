@@ -33,7 +33,7 @@
   margin-top: 10px;
   display: none; /* Initially hide the full description */
 }
-.read-more {
+button {
   margin-top: 10px;
   background-color: #007bff;
   color: #fff;
@@ -43,12 +43,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.read-more:hover {
+button:hover {
   background-color: #0056b3;
 }
-.description {
-  display: none;
-}
+
 .hidden {
   display: block;
 }
