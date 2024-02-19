@@ -27,16 +27,10 @@ body {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .slideshow-container {
-        position: relative;
-        height: 25vh;
-        overflow: hidden;
-    }
+@media (max-width: 550px) {
+    
 
-    .mySlides {
-        height: 100%;
-    }
+
 }
 
 
