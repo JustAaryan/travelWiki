@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden; 
+    overflow: hidden; /* Hide scroll bars */
 }
 
 .slideshow-container {
@@ -11,32 +11,22 @@ body {
     top: 0;
     left: 0;
     overflow: hidden;
-    z-index: -1; 
+     z-index: -1; /*Move the container to the background */
 }
 
 .mySlides {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover; /*Ensure the image covers the entire container*/
     position: absolute;
     transition: opacity 1s ease-in-out;
 }
 
 .mySlides.active {
+    display: block;
     opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .slideshow-container {
-        position: relative; 
-        height: 50vh; 
-    }
-    
-    .mySlides {
-        height: 100%;
-    }
-}
+} 
 
 
 
