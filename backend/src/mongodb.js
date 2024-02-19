@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://aryan981396:oqdW9ly32133JrLE@cluster0.u9ptne7.mongodb.net/")
+mongoose.connect("mongodb://aryan981396:oqdW9ly32133JrLE@cluster0.u9ptne7.mongodb.net/Logininfo")
     .then(() => {
         console.log("MongoDB connected");
     })
     .catch((error) => {
         console.error("MongoDB connection failed:", error);
     });
+
 
 const Loginschema = new mongoose.Schema({
     name: {
