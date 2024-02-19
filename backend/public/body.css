@@ -41,21 +41,19 @@ section h3 {
 }
 
 .tabs {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Create a grid layout with auto-fill columns */
+    grid-gap: 10px; /* Add gap between grid items */
     margin-top: 20px;
-    flex-wrap: wrap; /* Allow tabs to wrap to the next line if necessary */
 }
 
 .tab {
-    flex: 1 0 auto; /* Allow tabs to grow and shrink as needed */
     text-align: center;
     padding: 10px;
     background-color: skyblue;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 5px; /* Add margin between tabs */
 }
 
 .tab:hover {
