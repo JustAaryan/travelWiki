@@ -12,9 +12,15 @@
     <form action="/login.ejs" method="post">
         <input type="text" name="name" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
-        <button type="submit">Sign in</button>
+        <button type="submit" onclick="button()">Sign in</button>
     </form>
     <a href="/signup">Register</a>
-    
+
+<script>
+function button()
+{
+alert("Login Successful");
+}
+</script>
 </body>
 </html>
