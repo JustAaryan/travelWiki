@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 76px; 
+     font-size: clamp(36px,8vw,65px);
     font-weight: bold; 
     white-space: nowrap;
     color: white; 
