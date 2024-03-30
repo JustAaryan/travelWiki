@@ -43,7 +43,8 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 1; /* Ensure the button is in front of the slideshow */
-            font-size: 18px;
+     background-color:blue;      
+font-size: 18px;
             padding: 10px 20px;
             color: white;
             height:auto;
