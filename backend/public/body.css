@@ -17,6 +17,14 @@ nav a {
     padding: 14px 16px;
     text-decoration: none;
 }
+.navbar{
+    position:fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:large;
+    font-weight: bold;
+    z-index:1;
+    color:burlywood;
+}
 
 nav a:hover {
     background-color: #ddd;
