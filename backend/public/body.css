@@ -76,7 +76,7 @@ section h3 {
     display: block;
 }
 
- #button-container {
+ /*#button-container {
     position: fixed;
     top: calc(50% + 60px); /* Adjust the top position as needed */
     left: 50%;
@@ -92,7 +92,7 @@ section h3 {
     text-size-adjust: 20px;
     cursor: pointer;
     transition: box-shadow 0.15s;
-} 
+} */
 
 /* expbutton {
     
