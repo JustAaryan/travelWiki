@@ -1,13 +1,14 @@
 #text-container {
-    /* position: fixed; */
-    /* top: 50%;
-    left: 50%; */
+    position: fixed; 
+    top: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
      /* Increased text size */
+    
      
     font-weight: bold; /* Bold text */
     white-space: nowrap;
-    margin-bottom: 40px;
+    
     font-size: clamp(36px,8vw,65px);
    
     color:white; /* Custom text color */
@@ -26,7 +27,7 @@
         top: 0;
         left: 0;
         overflow: hidden;
-         z-index: -1; /*Move the container to the background */
+        z-index: -1; /*Move the container to the background */
     }
     
     .mySlides {
@@ -44,21 +45,22 @@
     } 
     
     .dropdowns {
-     text-align: center;
-        margin-bottom: 20px;
-   
-
-    
+        display:flex;
+        text-align: center;
     }
     
     select, button {
-        padding: 8px;
+        padding: 10px;
         margin: 5px;
+        
         
     }
     
-    #button-container {
+    .button-container {
         position: fixed;
+        display:flex;
+        justify-content: center;
+        flex-direction:row;
         top: calc(50% + 60px); /* Adjust the top position as needed */
         left: 50%;
         transform: translateX(-50%);
@@ -66,11 +68,20 @@
         font-size: 18px;
         padding: 10px 20px;
         color: white;
-        height:30px;
+        height:auto;
         font-weight: bold;
         width:74px;
         border: none;
         text-size-adjust: 20px;
         cursor: pointer;
         transition: box-shadow 0.15s;
-    }  
+    } 
+    
+    .navbar{
+        position:fixed;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size:large;
+        font-weight: bold;
+        z-index:1;
+        color:burlywood;
+    }
