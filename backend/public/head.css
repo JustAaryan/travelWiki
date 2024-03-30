@@ -1,0 +1,8 @@
+header {
+     background-color: rgba(255, 255, 255, 0); /* Fully transparent background */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden;
+}
+

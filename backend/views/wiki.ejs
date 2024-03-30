@@ -5,184 +5,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelWiki</title>
-    <style>
-        body {
-            font-family: 'Times New Roman';
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
+    <link rel="stylesheet" href="/head.css">
+    <link rel="stylesheet" href="/body.css">
+    <link rel="stylesheet" href="/signin.css">
+    <link rel="stylesheet" href="/animation.css">
+    <link rel="stylesheet" href="/textanimation.css">
+    <link rel="stylesheet" href="/footer.css">
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #444;
-            overflow: hidden;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        section {
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        section img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        section h3 {
-            color: #333;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Animation */
-        @keyframes slideshow {
-            0% {
-                opacity: 0;
-            }
-
-            25% {
-                opacity: 1;
-            }
-
-            75% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .tab {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            background-color: skyblue;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .tab:hover {
-            background-color: #555;
-        }
-
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ddd;
-            background-color: white;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-    </style>
 </head>
 
 <body>
+    <div class="slideshow-container">
+        <img class="mySlides active" src="ktm.jpeg" alt="Error Kathmandu">
+        <img class="mySlides" src="pok.jpeg" alt="Error Pokhara">
+        <img class="mySlides" src="must.jpeg" alt="Error Mustang">
+        <img class="mySlides" src="bhak.jpeg" alt="Error Bhaktapur">
 
-    <header>
+        <header class="navbar">
+            <h1>TravelWiki</h1>
+            <!-- <a href="./login.ejs">
+            <button class="signin">Sign in</button>
+            </a> -->
+            <nav>
+                <a href="#home">Home</a>
+                <a href="blog.ejs">Places</a>
+                <a href="fesabout.ejs">Festivals</a>
+                <a href="socials.ejs">About Us</a>
+            </nav>
+        </header>
+    
+       
+
+        <div class="button-container">
+            <button onclick="button()">Search</button>
+            <div class="dropdowns">
+                <select id="dropdown1">
+                    <option value="">Select the Occasion</option>
+                    <option value="option1_value1">
+                            Family Trip</option>
+                    <option value="option1_value2">Children Trip</option>
+                    <option value="option1_value3">Couple Date</option>
+                    <option value="option1_value3">Relaxing Trip</option>
+                </select>
+                <select id="dropdown2">
+                    <option value="">Select No of People</option>
+                    <option value="option2_value1">1</option>
+                    <option value="option2_value2">2</option>
+                    <option value="option2_value3">3</option>
+                    <option value="option2_value3">4</option>
+                </select>
+        </div>
+    </div>
+    
+   
+  
+       
+       
+        
+   <!--header>
         <h1>TravelWiki</h1>
+         <a href="./login.ejs">
+        <button class="signin">Sign in</button>
+        </a>
     </header>
 
-    <nav>
+    <nav class="navbar">
         <a href="#home">Home</a>
-        <a href="blogs.html">Blogs</a>
-        <a href="socials.html">Socials</a>
-        <a href="about.html">About Us</a>
-    </nav>
+        <a href="blog.ejs">Places</a>
+        <a href="fesabout.ejs">Festivals</a>
+        <a href="socials.ejs">About Us</a>
+    </nav-->
 
-    <section>
-        <h2>Popular Destinations</h2>
-
-        <h3>Your Preference</h3>
-        <div class="tabs">
-            <div class="tab" onclick="openTab('tab1')">Tab 1</div>
-            <div class="tab" onclick="openTab('tab2')">Tab 2</div>
-            <div class="tab" onclick="openTab('tab3')">Tab 3</div>
-        </div>
-
-        <div id="tab1" class="tab-content">
-            <!-- Content for Tab 1 -->
-            <label for="option1">Option 1:</label>
-            <select id="dests" name="dests">
-                <option value="v">Nepal</option>
-                <option value="s">India</option>
-            </select>
-        </div>
-
-        <div id="tab2" class="tab-content">
-            <!-- Content for Tab 2 -->
-            <label for="option2">Option 2:</label>
-            <input type="text" id="option2" name="option2">
-        </div>
-
-        <div id="tab3" class="tab-content">
-            <!-- Content for Tab 3 -->
-            <label for="option3">Option 3:</label>
-            <input type="text" id="option3" name="option3">
-        </div>
-    </section>
-
-    <footer>
-
-    </footer>
-
+    <!-- <footer> /* font-size: clamp(36px,8vw,65px);
+        <p>&copy; Aryan Travelwiki Design. All rights reserved.</p>
+    </footer>-->
+    <div id="text-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        // JavaScript to handle tabs
-        function openTab(tabName) {
-            var i, tabContent, tabLinks;
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
+       // JavaScript for slideshow functionality
+       var texts = [
+             "Welcome to our website.",
+            "Popular Destinations",
+            "Your own Preferences.",
+            "Different Festivals",
+            "Different Occasions",
+             "All in One"
+            // Add more texts as needed
+        ];
+
+        var currentTextIndex = 0;
+        var currentText = '';
+        var letterIndex = 0;
+
+        function typeText() {
+            if (letterIndex < texts[currentTextIndex].length) {
+                currentText += texts[currentTextIndex][letterIndex];
+                document.getElementById('text-container').innerHTML = currentText + '|';
+                letterIndex++;
+                setTimeout(typeText, 50); // Adjust the typing speed here
+            } else {
+                setTimeout(eraseText, 1000); // Wait before erasing
             }
-            tabLinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tabLinks.length; i++) {
-                tabLinks[i].style.backgroundColor = "#444";
-            }
-            document.getElementById(tabName).style.display = "block";
         }
+
+        function eraseText() {
+            if (letterIndex > 0) {
+                currentText = currentText.slice(0, -1);
+                document.getElementById('text-container').innerHTML = currentText + '|';
+                letterIndex--;
+                setTimeout(eraseText, 30); // Adjust the erasing speed here
+            } else {
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                setTimeout(typeText, 500); // Wait before typing the next text
+            }
+        }
+
+        function showSlides() {
+            var slides = document.getElementsByClassName("mySlides");
+
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = 0;
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.opacity = 1;
+
+            setTimeout(showSlides, 3000); // Change 3000 to your desired interval
+        }
+        // function button()
+        // {
+        //     window.location.href ='login.ejs';
+        //     alert('Sign in');
+        // }
+
+        var slideIndex = 0;
+        showSlides();
+        typeText(); // Start the text typing animation
+
+      
+
+        // Close dropdown menu when clicking outside
+        window.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    const menus = dropdown.querySelectorAll('.menu');
+                    menus.forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }
+            });
+        });
+
+        // Function for search button (replace with actual functionality)
+        function button() {
+            alert('Search button clicked!');
+        }
+        function search() {
+    var dropdown1 = document.getElementById("dropdown1");
+    var dropdown2 = document.getElementById("dropdown2");
+    var selectedOption1 = dropdown1.options[dropdown1.selectedIndex].value;
+    var selectedOption2 = dropdown2.options[dropdown2.selectedIndex].value;
+
+    // Perform search based on selected options
+    var searchQuery = selectedOption1 + " " + selectedOption2; // Combine selected options for search query
+    displaySearchResults(searchQuery);
+}
+
+function displaySearchResults(query) {
+    // This is a placeholder function to simulate search results display
+    var resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = "<h2>Search Results</h2><p>Showing results for: " + query + "</p>";
+    // You can implement actual search functionality here and update resultsDiv accordingly
+}
+
+
     </script>
+    
 
 </body>
 
 </html>
+
+          
+        

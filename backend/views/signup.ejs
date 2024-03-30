@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/signup.css">
+
+
+    <title>Register</title>
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form action="signup.ejs" method="post">
+        <input type="text" name="name" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <h3>Choose Your Ling</h3>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other" required>
+        
+        <button type="submit" onclick="button()">Sign Up</button>
+    </form>
+<script>
+function button(){
+alert("You are Registered Successfully");
+}</script>
+</body>
+</html>
+
+
+
+ 

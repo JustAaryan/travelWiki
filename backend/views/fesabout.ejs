@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festivals</title>
+    <link rel="stylesheet" href="/festives.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="image-container">
+                <h1>Dashain </h1><img class="festives" src="Das.JPG" alt="Error Kathmandu">
+            </div>
+            <p>
+                Nepal stands as a unique example of a secular and multicultural nation where diverse festivals are
+                joyfully celebrated within communities. In Nepal, individuals of varying religious backgrounds coexist
+                in the same neighborhoods and societies, fostering a spirit of unity as they come together to share in
+                the celebrations of a multitude of festivals, thus sharing their joys, happiness, and sorrows as a
+                harmonious whole.
+                Dashain (Nepali: दशैं; Daśãi, also Baḍādaśhãin बडादशैं or Bijayā Daśamī Nepali: बिजया दशमी) is the
+                15-day-long festival and holidays of Nepal.[2][3] It is the longest and the most auspicious festival in
+                the Nepalese annual calendar, celebrated by Nepalese Hindu people throughout the globe. It is not only
+                the longest festival of the country, but also the one which is most anticipated. As one of the popular
+                countries, Nepal has its Hindu festival as Dashain. The festival falls in September or October, starting
+                from the shukla paksha (bright lunar fortnight) of the month of Ashvin and ending on purnima, the full
+                moon. Among the 10 days for which it is celebrated, the most important days are the first, seventh,
+                eighth, ninth and the tenth, but tenth day is very important [4][5] Throughout the country Shakti is
+                worshiped in all her manifestations. This festival is also known for its emphasis on the family
+                gatherings, as well as on a renewal of community ties.[3] People return from all parts of the world, as
+                well as different parts of the country, to celebrate together.[3] All government offices, educational
+                institutions and other private offices remain closed during the festival and holidays period.
+            </p>
+            <h5>Significance</h5>
+            <p class="description">
+                Dashain symbolizes the victory of good over evil.
+
+                For followers of Shaktism, it represents the bare victory of the goddess, Shakti. In Hindu mythology,
+                the demon Mahishasura had created terror in the devaloka (the world where gods live ) but Durga killed
+                the demon.[6][7][8] The first nine days of Dashain symbolizes the battle which took place between the
+                different manifestations of Durga and Mahishasura. The tenth day is the day when Durga finally defeated
+                him. For other Hindus, this festival symbolizes the victory of Rama over Ravana as recounted in the
+                Ramayana.
+
+                In Nepal all Hindu ethnic groups celebrate this festival with their own variation. Among the Newars, it
+                is known as Swanti. The festival is celebrated from Trayodashi of Kartik Krishna to Kartik Shukla
+                Dwitiya every year. Tihar in general signifies the festival of lights, where diyas are lit both inside
+                and outside the houses to make it illuminate at night. The five-day festival is considered to be of
+                great importance as it shows reverence to not just the humans and the Gods, but also to the animals like
+                crow, cow and dog, who maintain an intense relationship with the humans. People make patterns on the
+                floor of living rooms or courtyards using materials such as colored rice, dry flour, colored sand or
+                flower petals outside of their house, called "Rangoli" which is meant to be sacred welcoming areas for
+                the Hindu deities.[9] During the celebrations gamblers are found in the streets and some gamblers are
+                known to make extreme bets such as staking their properties and some times their own daughter and wives
+                jewelries.[10]
+            </p>
+            <button class="read-more">Read More</button>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.read-more').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.querySelector('.description').classList.toggle('hidden');
+                btn.textContent = btn.textContent === 'Read More' ? 'Read Less' : 'Read More';
+            });
+        });
+    </script>
+</body>
+
+</body>
+
+</html>

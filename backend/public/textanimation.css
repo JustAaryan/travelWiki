@@ -1,0 +1,58 @@
+ #text-container {
+        position: fixed; 
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+         /* Increased text size */
+        
+         
+        font-weight: bold; /* Bold text */
+        white-space: nowrap;
+        
+        font-size: clamp(36px,8vw,65px);
+       
+        color:white; /* Custom text color */
+        z-index: 1; /* Place the text animation in front of the slideshow */
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Hide scroll bars */
+        }
+        
+        
+        
+        .dropdowns {
+            display:flex;
+            text-align: center;
+        }
+        
+        select, button {
+            padding: 10px;
+            margin: 5px;
+            
+            
+        }
+        
+        .button-container {
+            position: fixed;
+            display:flex;
+            justify-content: center;
+            flex-direction:row;
+            top: calc(50% + 60px); /* Adjust the top position as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Ensure the button is in front of the slideshow */
+            font-size: 18px;
+            padding: 10px 20px;
+            color: white;
+            height:auto;
+            font-weight: bold;
+            width:74px;
+            border: none;
+            text-size-adjust: 20px;
+            cursor: pointer;
+            transition: box-shadow 0.15s;
+        } 
+        
+       

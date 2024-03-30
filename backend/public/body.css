@@ -1,0 +1,99 @@
+body {
+    font-family: 'Times New Roman';
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+nav {
+    background-color: rgba(255, 255, 255, 0); 
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar{
+    position:fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:large;
+    font-weight: bold;
+    z-index:1;
+    color:burlywood;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+section {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    color: #333;
+}
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* #button-container {
+    position: fixed;
+    top: calc(50% + 60px); /* Adjust the top position as needed *
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Ensure the button is in front of the slideshow *
+    font-size: 18px;
+    padding: 10px 20px;
+    color: white;
+    height:30px;
+    font-weight: bold;
+    width:74px;
+    border: none;
+    text-size-adjust: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+} */
+
+/* expbutton {
+    
+} */
