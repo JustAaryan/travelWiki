@@ -79,6 +79,17 @@ app.get("/blog.ejs", (req, res) => {
         res.redirect("/login.ejs");
     }
 });
+app.get("/blog.ejs", (req, res) => {
+    // Extract the parameters from the query string
+    const dp1 = req.query.dp1;
+    const dp2 = req.query.dp2;
+
+    // Render your blog page with the parameters
+    res.render('blog', { dp1: dp1, dp2: dp2 });
+});
+app.get("/signup", (req, res) => {
+    res.render("signup");
+});
 
 app.get("/signup", (req, res) => {
     res.render("signup");
