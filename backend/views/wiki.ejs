@@ -38,25 +38,32 @@
 
         <div class="button-container">
             <button onclick="button()">Search</button>
+
             <div class="dropdowns">
                 <select id="dropdown1">
                     <option value="">Select the Occasion</option>
-                    <option value="option1_value1">
-                            Family Trip</option>
-                    <option value="option1_value2">Children Trip</option>
-                    <option value="option1_value3">Couple Date</option>
-                    <option value="option1_value3">Relaxing Trip</option>
+                    <option value="Family Trip">Family Trip</option>
+                    <option value="Children Trip">Children Trip</option>
+                    <option value="Couple Date">Couple Date</option>
+                    <option value="Relaxing Trip">Relaxing Trip</option>
                 </select>
+
                 <select id="dropdown2">
                     <option value="">Select No of People</option>
-                    <option value="option2_value1">1</option>
-                    <option value="option2_value2">2</option>
-                    <option value="option2_value3">3</option>
-                    <option value="option2_value3">4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                 </select>
+
+                <div id="results"></div>
+            </div>
         </div>
+
+        <div id="text-container"></div>
+
     </div>
-    
+
    
   
        
@@ -147,9 +154,8 @@
         typeText(); // Start the text typing animation
 
       
-
-        // Close dropdown menu when clicking outside
-        window.addEventListener('click', function(event) {
+    //dropdown closes when clicked elsewhere.
+       window.addEventListener('click', function(event) {
             const dropdowns = document.querySelectorAll('.dropdown');
             dropdowns.forEach(dropdown => {
                 if (!dropdown.contains(event.target)) {
@@ -160,29 +166,23 @@
                 }
             });
         });
-
-        // Function for search button (replace with actual functionality)
         function button() {
-            alert('Search button clicked!');
+
+         // Get the selected values from the dropdowns
+    var dp1 = document.getElementById("dropdown1").value;
+    var dp2 = document.getElementById("dropdown2").value;
+
+    // Perform actions based on the selected values
+    if (dp1 && dp2) {
+        // Redirect the user to a specific page or perform other actions based on dp1 and dp2
+        window.location.href = '/blog.ejs?dp1=' + dp1 + '&dp2=' + dp2;
+    } else {
+        // Handle the case when dropdowns are not selected
+        alert("Please select values from both dropdowns.");
+    }
         }
-        function search() {
-    var dropdown1 = document.getElementById("dropdown1");
-    var dropdown2 = document.getElementById("dropdown2");
-    var selectedOption1 = dropdown1.options[dropdown1.selectedIndex].value;
-    var selectedOption2 = dropdown2.options[dropdown2.selectedIndex].value;
 
-    // Perform search based on selected options
-    var searchQuery = selectedOption1 + " " + selectedOption2; // Combine selected options for search query
-    displaySearchResults(searchQuery);
-}
-
-function displaySearchResults(query) {
-    // This is a placeholder function to simulate search results display
-    var resultsDiv = document.getElementById("searchResults");
-    resultsDiv.innerHTML = "<h2>Search Results</h2><p>Showing results for: " + query + "</p>";
-    // You can implement actual search functionality here and update resultsDiv accordingly
-}
-
+       
 
     </script>
     
