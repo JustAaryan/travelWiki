@@ -144,6 +144,30 @@
 
 
     <script>
+     window.onload = function() {
+            // Retrieve search parameters from the URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var dp1 = urlParams.get('dp1');
+            var dp2 = urlParams.get('dp2');
+
+            // Filter content based on search parameters
+            if (dp1 === "Couple Date" && dp2 === "2") {
+                document.querySelectorAll('.item').forEach(item => {
+                    var title = item.querySelector('h1');
+                    if (title && title.innerText !== 'Mustang') {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+           else if (dp1 === "Children Trip" && dp2 === "4") {
+                document.querySelectorAll('.item').forEach(item => {
+                    var title = item.querySelector('h1');
+                    if (title && title.innerText !== 'Bhaktapur') {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        };
         document.querySelectorAll('.read-more').forEach(btn => {
             btn.addEventListener('click', () => {
                 btn.parentElement.querySelector('.description').classList.toggle('hidden');
@@ -156,30 +180,3 @@
 </html>
 
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/festives.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Mustang</h1>
-        <img class="festives" src="must.jpg" alt="Error-img-must">
-        <p class="hidden">Mustang District (Nepali: मुस्ताङ जिल्ला Listenⓘ) (from the Tibetan möntang (Wylie: smon-thang), Nepali: मुस्तांग Mustāṃg "fertile plain") is one of the eleven districts of Gandaki Province and one of seventy-seven districts of Nepal which was a Kingdom of Lo-Manthang that joined the Federation of Nepal in 2008 after abolition of the Shah dynasty. The district covers an area of 3,573 km2 (1,380 sq mi) and in 2011 had a population of 13,452.[2] The headquarters is located at Jomsom. Mustang is the fifth largest district of Nepal in terms of area.
-
-            The district is a part of Gandaki Province in northern Nepal, straddles the Himalayas and extends northward onto the Tibetan Plateau. The district is one of the remotest areas in Nepal and is second in terms of the sparsity of population.[3] The elevation ranges from 1,372 to 8,167 meters (Mount Dhaulagiri, the 7th highest mountain in the world), with several peaks above 7,000 meters.</p>
-            <button class="read-more">Read More</button>
-    </div>
-
-    <script>
-        document.querySelectorAll('.read-more').forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.previousElementSibling.classList.toggle('hidden');
-            });
-        });
-    </script>
-</body>
-</html> -->
